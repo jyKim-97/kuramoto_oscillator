@@ -134,7 +134,7 @@ class SpatialKuramoto:
     def save(self, save_name):
         print("print data to %s"%(save_name))
         with open(save_name, "wb") as fid:
-            pkl.dump(fid, self.phase_all)
+            pkl.dump(self.phase_all, fid)
         
     def load(self, fname):
         print("load data %s"%(fname))
@@ -156,6 +156,7 @@ class VideoMaker:
     def __init__(self, objKuramoto):
         self.obj = objKuramoto
         self.ims = np.sin(reshape(self.obj.phase_all))
+        self.dt = objKuramoto.dt
     
     def export(self, out_name=None, dpi=120, figsize=(4,4), frame_itv=1, fps=30):
         # frame_itv: simulation step interval of the video
@@ -186,12 +187,14 @@ class VideoMaker:
     def draw_init(self, dpi, figsize):
         self.fig = plt.figure(dpi=dpi, figsize=figsize)
         self.im_map = plt.imshow(self.ims[0], cmap='RdBu', vmax=1, vmin=-1)
+        self.t_obj = plt.title("t = 0", fontsize=12)
         plt.axis('off')
         plt.tight_layout()
         self.fig.canvas.draw()
     
     def draw(self, n_frame):
         self.im_map.set_array(self.ims[n_frame])
+        self.t_obj.set_text("t = %.2f"%(n_frame*self.dt))
         self.fig.canvas.draw()
     
     
