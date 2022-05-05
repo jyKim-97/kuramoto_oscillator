@@ -1,10 +1,11 @@
 # Kuramoto oscillator simulator
 Simulation code for Kuramoto oscillator
 
-| Weak interaction | Strong interaction |  
-| --- | --- |
-| <img src="https://github.com/jyKim-97/kuramoto_oscillator/blob/master/samples/weak_osc.gif" with="500" height="500" /> | <img src="https://github.com/jyKim-97/kuramoto_oscillator/blob/master/samples/strong_osc.gif" with="500" height="500" /> |
+Weak interaction sample
+<img src="https://github.com/jyKim-97/kuramoto_oscillator/blob/master/samples/weak_osc.gif" with="300" height="300" />
 
+Strong interaction sample
+<img src="https://github.com/jyKim-97/kuramoto_oscillator/blob/master/samples/strong_osc.gif" with="300" height="300" />
 
 # Run simulation
 
