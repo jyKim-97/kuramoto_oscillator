@@ -2,3 +2,5 @@ __pycache__
 .ipynb_*
 *.mp4
 *.pkl
+*.out
+*.o
